@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Color Palette */
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  
+  --accent-neon-red: #ff3333;
+  --accent-telemetry-orange: #ff6600;
+
+  /* Brutalist Dark Grays */
+  --gray-dark: #121212;
+  --gray-base: #1e1e1e;
+  --gray-light: #2d2d2d;
+
+  /* Fonts (Placeholders for next/font integration) */
+  --font-heading: 'Oswald', 'Impact', 'Arial Black', sans-serif; 
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-mono); /* Defaulting to mono for technical/terminal feel */
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-stretch: expanded;
+    text-transform: uppercase;
+  }
+
+  /* Brutalist enforcement: no rounded corners by default */
+  * {
+    border-radius: 0;
+  }
+}
+
+/* Custom Scrollbar for brutalist aesthetic (optional but fitting) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gray-light);
+  border: 1px solid var(--background);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-neon-red);
+}
