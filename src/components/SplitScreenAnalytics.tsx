@@ -34,7 +34,7 @@ export default function SplitScreenAnalytics() {
             {/* Primary Telemetry Chart */}
             <div className="col-span-2 row-span-2 border-2 border-[var(--gray-light)] bg-[#111111] p-4 relative overflow-hidden flex flex-col">
               <div className="font-mono text-[var(--gray-light)] text-xs md:text-sm mb-2 flex justify-between">
-                <span>> TELEMETRY_FLUX (MS/S)</span>
+                <span>&gt; TELEMETRY_FLUX (MS/S)</span>
                 <span>LIVE_STREAM_ACTIVE</span>
               </div>
               
@@ -60,7 +60,7 @@ export default function SplitScreenAnalytics() {
             
             {/* Secondary Stat: Thermals */}
             <div className="col-span-1 row-span-1 border-2 border-[var(--gray-light)] bg-[#111111] p-4 flex flex-col justify-between">
-              <div className="font-mono text-[var(--gray-light)] text-xs">> SYS_THERMALS</div>
+              <div className="font-mono text-[var(--gray-light)] text-xs">&gt; SYS_THERMALS</div>
               <div className="font-mono text-3xl md:text-5xl text-[var(--foreground)] font-bold tracking-tighter">42.8°C</div>
               <div className="self-start mt-2 border-2 border-[#00ff00] text-[#00ff00] font-mono text-[10px] md:text-xs font-bold px-2 py-0.5 bg-[#00ff00]/10">
                 SAFE
@@ -69,7 +69,7 @@ export default function SplitScreenAnalytics() {
             
             {/* Secondary Stat: Packet Loss */}
             <div className="col-span-1 row-span-1 border-2 border-[var(--gray-light)] bg-[#111111] p-4 flex flex-col justify-between">
-              <div className="font-mono text-[var(--gray-light)] text-xs">> PACKET_LOSS</div>
+              <div className="font-mono text-[var(--gray-light)] text-xs">&gt; PACKET_LOSS</div>
               <div className="font-mono text-3xl md:text-5xl text-[var(--foreground)] font-bold tracking-tighter">0.03%</div>
               <div className="self-start mt-2 border-2 border-[#00ff00] text-[#00ff00] font-mono text-[10px] md:text-xs font-bold px-2 py-0.5 bg-[#00ff00]/10">
                 SAFE

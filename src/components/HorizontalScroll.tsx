@@ -62,8 +62,8 @@ export default function HorizontalScroll() {
             {/* Terminal Text Block */}
             <div className="w-full md:w-1/2 h-1/2 md:h-full flex flex-col p-6 md:p-12 justify-center relative">
               <div className="font-mono text-[var(--accent-telemetry-orange)] text-sm md:text-base mb-6 border-b-2 border-[var(--gray-light)] pb-4 w-full">
-                > TARGET: INT8 QUANTIZATION<br/>
-                > MODEL: MobileNetV2
+                &gt; TARGET: INT8 QUANTIZATION<br/>
+                &gt; MODEL: MobileNetV2
               </div>
               <p className="font-mono text-[var(--foreground)] text-sm md:text-base leading-relaxed">
                 Deploying CNN architectures to the edge requires aggressive compression. By applying Int8 Quantization to the MobileNetV2 backbone, the model's memory footprint and inference latency are radically reduced without catastrophic degradation of accuracy. 
@@ -84,8 +84,8 @@ export default function HorizontalScroll() {
             
             <div className="w-full md:w-1/2 h-1/2 md:h-full flex flex-col p-6 md:p-12 justify-center relative">
               <div className="font-mono text-[var(--accent-neon-red)] text-sm md:text-base mb-6 border-b-2 border-[var(--gray-light)] pb-4 w-full">
-                > TARGET_HARDWARE: STM32H7_NUCLEO<br/>
-                > CRITICAL_WARNING: MEMORY_LIMIT
+                &gt; TARGET_HARDWARE: STM32H7_NUCLEO<br/>
+                &gt; CRITICAL_WARNING: MEMORY_LIMIT
               </div>
               <p className="font-mono text-[var(--foreground)] text-sm md:text-base leading-relaxed">
                 The primary engineering bottleneck. The entire quantized model, alongside the RTOS and telemetry payload handlers, must fit within a strict <span className="bg-[var(--foreground)] text-[var(--background)] px-1 font-bold">1024 KB internal RAM constraint</span>. Memory allocation is manually managed to prevent heap fragmentation during orbital cycles.
@@ -106,8 +106,8 @@ export default function HorizontalScroll() {
             
             <div className="w-full md:w-1/2 h-1/2 md:h-full flex flex-col p-6 md:p-12 justify-center relative">
               <div className="font-mono text-[var(--foreground)] text-sm md:text-base mb-6 border-b-2 border-[var(--gray-light)] pb-4 w-full">
-                > PROTOCOL: INFERENCE_VALIDATION<br/>
-                > LATENCY: &lt; 15ms
+                &gt; PROTOCOL: INFERENCE_VALIDATION<br/>
+                &gt; LATENCY: &lt; 15ms
               </div>
               <p className="font-mono text-[var(--gray-light)] text-sm md:text-base leading-relaxed">
                 Evaluating the Int8 model against the float32 baseline. The confusion matrix reveals a highly acceptable trade-off curve. Edge AI deployment successful. Real-time classification of terrain is now active directly on the Nucleo board at the edge without requiring a ground-station downlink.

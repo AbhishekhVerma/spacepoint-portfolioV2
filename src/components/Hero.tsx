@@ -64,9 +64,9 @@ export default function Hero() {
           sys.log // Practice School-I
         </p>
         <p className="font-mono text-left text-[var(--foreground)] text-sm md:text-base leading-relaxed tracking-tight">
-          > INITIATING_UPLINK: SPACEPOINT_UAE<br/>
-          > PROJECT: CUBESAT_SWARM_TELEMETRY<br/>
-          > DEPLOYMENT: LEO (LOW EARTH ORBIT)<br/>
+          &gt; INITIATING_UPLINK: SPACEPOINT_UAE<br/>
+          &gt; PROJECT: CUBESAT_SWARM_TELEMETRY<br/>
+          &gt; DEPLOYMENT: LEO (LOW EARTH ORBIT)<br/>
           <br/>
           Architecting resilient, decentralized mesh networks for nano-satellites. Integrating onboard Edge AI for autonomous orbital decision-making, minimizing ground-station latency, and ensuring continuous high-fidelity telemetry streaming.
         </p>
