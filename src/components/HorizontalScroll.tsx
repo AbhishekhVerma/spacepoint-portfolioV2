@@ -109,7 +109,7 @@ export default function HorizontalScroll() {
                 &gt; PROTOCOL: INFERENCE_VALIDATION<br/>
                 &gt; LATENCY: &lt; 15ms
               </div>
-              <p className="font-mono text-[var(--gray-light)] text-sm md:text-base leading-relaxed">
+              <p className="font-mono text-[var(--foreground)] text-sm md:text-base leading-relaxed">
                 Evaluating the Int8 model against the float32 baseline. The confusion matrix reveals a highly acceptable trade-off curve. Edge AI deployment successful. Real-time classification of terrain is now active directly on the Nucleo board at the edge without requiring a ground-station downlink.
               </p>
             </div>

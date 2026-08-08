@@ -102,13 +102,13 @@ export default function ParallaxSection() {
         
         {/* Context Paragraph */}
         <div className="border-l-4 border-[var(--accent-telemetry-orange)] pl-6 py-1 mb-10">
-          <p className="font-mono text-[var(--gray-light)] text-sm md:text-base leading-relaxed">
+          <p className="font-mono text-[var(--foreground)] text-sm md:text-base leading-relaxed">
             Constructing a high-gain, omnidirectional 1/4 wave ground plane antenna designed to intercept fragmented CubeSat telemetry packets across hostile, high-noise urban RF environments.
           </p>
         </div>
 
         {/* Technical Specs List */}
-        <ul className="font-mono text-[var(--gray-light)] text-sm md:text-base space-y-6 flex flex-col">
+        <ul className="font-mono text-[var(--foreground)] text-sm md:text-base space-y-6 flex flex-col">
           <li className="flex flex-col md:flex-row md:items-start group">
              <span className="text-[var(--accent-telemetry-orange)] mr-4 font-bold hidden md:block opacity-50 group-hover:opacity-100 transition-opacity">[{'>'}]</span>
              <div>
