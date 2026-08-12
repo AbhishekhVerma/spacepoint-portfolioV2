@@ -116,10 +116,16 @@ export default function GalleryGrid() {
           ref={addToRefs} 
           className="col-span-1 md:col-span-3 h-64 md:h-96 border-4 border-[var(--accent-telemetry-orange)] bg-[#0a0a0a] relative overflow-hidden group flex items-center justify-center shadow-[8px_8px_0px_0px_var(--accent-telemetry-orange)]"
         >
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xNSIvPjwvc3ZnPg==')] opacity-50"></div>
-          <div className="text-center font-mono z-10 p-4">
-             <div className="text-[var(--accent-telemetry-orange)] text-4xl mb-2 font-bold">3+</div>
-             <div className="text-[var(--foreground)] text-xs uppercase tracking-widest">Workshops<br/>lead/assisted in</div>
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xNSIvPjwvc3ZnPg==')] opacity-50 pointer-events-none"></div>
+          <div className="text-center font-mono z-10 p-4 flex flex-col items-center justify-center h-full">
+             <div className="mb-6">
+               <div className="text-[var(--accent-telemetry-orange)] text-4xl md:text-5xl mb-1 font-bold">3+</div>
+               <div className="text-[var(--foreground)] text-xs md:text-sm uppercase tracking-widest">Workshops<br/>Lead/Assisted In</div>
+             </div>
+             <div>
+               <div className="text-[var(--accent-telemetry-orange)] text-4xl md:text-5xl mb-1 font-bold">250+</div>
+               <div className="text-[var(--foreground)] text-xs md:text-sm uppercase tracking-widest">Students<br/>Trained</div>
+             </div>
           </div>
         </div>
 
