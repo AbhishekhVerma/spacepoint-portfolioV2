@@ -123,7 +123,7 @@ export default function GalleryGrid() {
                <div className="text-[var(--foreground)] text-xs md:text-sm uppercase tracking-widest">Workshops<br/>Lead/Assisted In</div>
              </div>
              <div>
-               <div className="text-[var(--accent-telemetry-orange)] text-4xl md:text-5xl mb-1 font-bold">250+</div>
+               <div className="text-[var(--accent-telemetry-orange)] text-4xl md:text-5xl mb-1 font-bold">30+</div>
                <div className="text-[var(--foreground)] text-xs md:text-sm uppercase tracking-widest">Students<br/>Trained</div>
              </div>
           </div>
