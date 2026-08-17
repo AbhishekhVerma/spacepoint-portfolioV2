@@ -72,12 +72,9 @@ export default function AboutSection() {
           </h2>
           <div className="w-24 h-2 bg-[var(--accent-neon-red)] mt-2 mb-12 about-text"></div>
           
-          {/* Profile Image Placeholder */}
+          {/* Profile Image */}
           <div className="w-full max-w-[300px] aspect-square border-4 border-[var(--gray-light)] bg-neutral-900 relative overflow-hidden group shadow-[8px_8px_0px_0px_var(--gray-dark)] about-text">
-            <img src="/img/profile.jpg" alt="Operator Profile" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out opacity-50" />
-            <div className="absolute inset-0 flex items-center justify-center font-mono text-[var(--gray-light)] opacity-50 group-hover:opacity-0 transition-opacity">
-              [ INSERT_IMG_HERE ]
-            </div>
+            <img src="/img/profile.jpg" alt="Operator Profile" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
             <div className="absolute bottom-4 left-4 bg-[var(--background)] border border-[var(--gray-light)] px-3 py-1 font-mono text-[10px] md:text-xs text-[var(--foreground)] z-10">
               &gt; OPERATOR_FEED
             </div>
@@ -100,7 +97,7 @@ export default function AboutSection() {
           <div className="about-text border-l-4 border-[var(--accent-telemetry-orange)] pl-6 bg-gradient-to-r from-[var(--accent-telemetry-orange)]/10 to-transparent py-4 pr-4">
             <h3 className="font-mono text-[var(--accent-telemetry-orange)] text-xl md:text-2xl font-bold mb-4 uppercase tracking-tight">&gt; MISSION_LOG</h3>
             <p className="font-mono text-[var(--foreground)] text-sm md:text-base leading-relaxed">
-              My engineering portfolio spans multiple disciplines—from designing resilient mesh networks for nano-satellite swarms and executing Int8 quantized computer vision models on bare-metal microcontrollers, to architecting ground station uplinks. I thrive in high-noise, high-stakes environments where rigid hardware limitations demand radical algorithmic innovation.
+              My engineering portfolio highlights practical deployments across the aerospace and AI stack. I've designed and validated Int8 quantized CNN architectures for real-time edge terrain classification, engineered decentralized RF mesh networks for resilient LEO satellite communications, and constructed high-gain ground station uplinks for telemetry interception in hostile urban environments. Alongside building live telemetry analytics dashboards, I also actively train the next generation of engineers through intensive STEM workshops.
             </p>
           </div>
           
