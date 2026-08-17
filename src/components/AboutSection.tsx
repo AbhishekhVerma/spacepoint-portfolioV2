@@ -88,8 +88,7 @@ export default function AboutSection() {
           <div className="about-text border-l-4 border-[var(--gray-light)] pl-6">
             <h3 className="font-mono text-[var(--foreground)] text-xl md:text-2xl font-bold mb-4 uppercase tracking-tight">&gt; THE_OPERATOR</h3>
             <p className="font-mono text-[var(--foreground)] text-sm md:text-base leading-relaxed">
-              I am an Aerospace Engineering and Machine Learning specialist driven by the intersection of autonomous systems, embedded edge computing, and orbital telemetry. 
-              My work focuses on bridging the gap between raw hardware constraints and high-level AI deployment, pushing complex neural networks out of the cloud and directly onto the edge.
+              A multidisciplinary 3rd‑year Computer Science student focused on data workflows, automation, and software development with applied artificial intelligence. Built backend systems, web applications, and AI-enabled tools through internships, projects, and winning hackathons. Strong foundation in object-oriented programming, databases, and scalable software design, with a keen interest in learning new tools and contributing to production-grade full-stack systems alongside bridging the gap between complex hardware systems and reliable software.
             </p>
           </div>
 
