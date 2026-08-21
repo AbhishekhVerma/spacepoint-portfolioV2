@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: 'Interactive portfolio detailing aerospace engineering, embedded systems, and machine learning work at SpacePoint UAE.',
 };
 
+import { Providers } from '@/components/Providers';
+
 export default function RootLayout({
   children,
 }: {
@@ -17,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-[#0a0a0a] text-white overflow-x-hidden`}>
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
