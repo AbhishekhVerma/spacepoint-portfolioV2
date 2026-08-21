@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function AboutSection() {
+export default function AboutSection({ aboutText, profileImage }: { aboutText?: string, profileImage?: string }) {
   const sectionRef = useRef<HTMLElement>(null);
   
   useEffect(() => {
@@ -74,7 +74,7 @@ export default function AboutSection() {
           
           {/* Profile Image */}
           <div className="w-full max-w-[300px] aspect-square border-4 border-[var(--gray-light)] bg-neutral-900 relative overflow-hidden group shadow-[8px_8px_0px_0px_var(--gray-dark)] about-text">
-            <img src="/img/profile.jpg" alt="Operator Profile" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+            <img src={profileImage || "/img/profile.jpg"} alt="Operator Profile" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
             <div className="absolute bottom-4 left-4 bg-[var(--background)] border border-[var(--gray-light)] px-3 py-1 font-mono text-[10px] md:text-xs text-[var(--foreground)] z-10">
               &gt; OPERATOR_FEED
             </div>
@@ -88,18 +88,11 @@ export default function AboutSection() {
           <div className="about-text border-l-4 border-[var(--gray-light)] pl-6">
             <h3 className="font-mono text-[var(--foreground)] text-xl md:text-2xl font-bold mb-4 uppercase tracking-tight">&gt; THE_OPERATOR</h3>
             <p className="font-mono text-[var(--foreground)] text-sm md:text-base leading-relaxed">
-              A multidisciplinary 3rd‑year Computer Science student focused on data workflows, automation, and software development with applied artificial intelligence. Built backend systems, web applications, and AI-enabled tools through internships, projects, and winning hackathons. Strong foundation in object-oriented programming, databases, and scalable software design, with a keen interest in learning new tools and contributing to production-grade full-stack systems alongside bridging the gap between complex hardware systems and reliable software.
+              {aboutText}
             </p>
           </div>
 
-          {/* Projects / Internships block */}
-          <div className="about-text border-l-4 border-[var(--accent-telemetry-orange)] pl-6 bg-gradient-to-r from-[var(--accent-telemetry-orange)]/10 to-transparent py-4 pr-4">
-            <h3 className="font-mono text-[var(--accent-telemetry-orange)] text-xl md:text-2xl font-bold mb-4 uppercase tracking-tight">&gt; MISSION_LOG</h3>
-            <p className="font-mono text-[var(--foreground)] text-sm md:text-base leading-relaxed">
-              My engineering portfolio highlights practical deployments across the aerospace and AI stack. I've designed and validated Int8 quantized CNN architectures for real-time edge terrain classification, engineered decentralized RF mesh networks for resilient LEO satellite communications, and constructed high-gain ground station uplinks for telemetry interception in hostile urban environments. Alongside building live telemetry analytics dashboards, I also actively train the next generation of engineers through intensive STEM workshops.
-            </p>
-          </div>
-          
+          {/* Note: I removed the static MISSION_LOG block from here since missionLog is now rendered in Hero.tsx */}
         </div>
       </div>
 

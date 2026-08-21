@@ -1,18 +1,42 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { signOut } from "next-auth/react";
 
 export default function DashboardClient() {
   const [loading, setLoading] = useState(false);
+  const [isFetching, setIsFetching] = useState(true);
 
   const [formData, setFormData] = useState({
     username: "operator",
-    aboutText: "A multidisciplinary 3rd-year Computer Science student...",
-    missionLog: "My engineering portfolio highlights practical deployments...",
+    aboutText: "",
+    missionLog: "",
     profileImage: "/img/profile.jpg",
     themePrimaryColor: "#ff3333",
   });
+
+  useEffect(() => {
+    async function loadData() {
+      try {
+        const res = await fetch("/api/portfolio");
+        if (res.ok) {
+          const data = await res.json();
+          setFormData({
+            username: data.username || "operator",
+            aboutText: data.aboutText || "",
+            missionLog: data.missionLog || "",
+            profileImage: data.profileImage || "/img/profile.jpg",
+            themePrimaryColor: data.themePrimaryColor || "#ff3333",
+          });
+        }
+      } catch (err) {
+        console.error("Failed to fetch portfolio data", err);
+      } finally {
+        setIsFetching(false);
+      }
+    }
+    loadData();
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,12 +45,30 @@ export default function DashboardClient() {
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // In a full implementation, this would send a PUT request to /api/portfolio
-    setTimeout(() => {
-      alert("Settings saved successfully!");
+    
+    try {
+      const res = await fetch("/api/portfolio", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        alert("Settings saved successfully to database!");
+      } else {
+        alert("Failed to save settings.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error saving settings.");
+    } finally {
       setLoading(false);
-    }, 1000);
+    }
   };
+
+  if (isFetching) {
+    return <div className="font-mono text-[var(--accent-telemetry-orange)] animate-pulse">CONNECTING_TO_UPLINK...</div>;
+  }
 
   return (
     <div className="space-y-8">
@@ -39,7 +81,7 @@ export default function DashboardClient() {
             name="username"
             value={formData.username}
             onChange={handleChange}
-            className="w-full bg-neutral-800 border border-[var(--gray-light)] text-[var(--foreground)] p-3 font-mono focus:border-[var(--accent-telemetry-orange)]"
+            className="w-full bg-neutral-800 border border-[var(--gray-light)] text-[var(--foreground)] p-3 font-mono focus:border-[var(--accent-telemetry-orange)] focus:outline-none"
           />
         </div>
 
@@ -51,7 +93,7 @@ export default function DashboardClient() {
             name="profileImage"
             value={formData.profileImage}
             onChange={handleChange}
-            className="w-full bg-neutral-800 border border-[var(--gray-light)] text-[var(--foreground)] p-3 font-mono focus:border-[var(--accent-telemetry-orange)]"
+            className="w-full bg-neutral-800 border border-[var(--gray-light)] text-[var(--foreground)] p-3 font-mono focus:border-[var(--accent-telemetry-orange)] focus:outline-none"
           />
         </div>
 
@@ -64,7 +106,7 @@ export default function DashboardClient() {
             value={formData.aboutText}
             onChange={handleChange}
             rows={4}
-            className="w-full bg-neutral-800 border border-[var(--gray-light)] text-[var(--foreground)] p-3 font-mono focus:border-[var(--accent-telemetry-orange)]"
+            className="w-full bg-neutral-800 border border-[var(--gray-light)] text-[var(--foreground)] p-3 font-mono focus:border-[var(--accent-telemetry-orange)] focus:outline-none"
           />
         </div>
 
@@ -77,7 +119,7 @@ export default function DashboardClient() {
             value={formData.missionLog}
             onChange={handleChange}
             rows={4}
-            className="w-full bg-neutral-800 border border-[var(--gray-light)] text-[var(--foreground)] p-3 font-mono focus:border-[var(--accent-telemetry-orange)]"
+            className="w-full bg-neutral-800 border border-[var(--gray-light)] text-[var(--foreground)] p-3 font-mono focus:border-[var(--accent-telemetry-orange)] focus:outline-none"
           />
         </div>
         

@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Hero() {
+export default function Hero({ missionLog }: { missionLog?: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
@@ -68,7 +68,7 @@ export default function Hero() {
           &gt; PROJECT: CUBESAT_SWARM_TELEMETRY<br/>
           &gt; DEPLOYMENT: LEO (LOW EARTH ORBIT)<br/>
           <br/>
-          Architecting resilient, decentralized mesh networks for nano-satellites. Integrating onboard Edge AI for autonomous orbital decision-making, minimizing ground-station latency, and ensuring continuous high-fidelity telemetry streaming.
+          {missionLog}
         </p>
       </div>
 
