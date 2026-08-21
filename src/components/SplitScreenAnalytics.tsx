@@ -2,7 +2,16 @@
 
 import React from 'react';
 
-export default function SplitScreenAnalytics() {
+export default function SplitScreenAnalytics({ analyticsData }: { analyticsData?: any }) {
+  const block1Title = analyticsData?.block1Title || "> Virtualization:\nDocker";
+  const block1Text = analyticsData?.block1Text || "The entire ground station analytics stack is fully isolated and deployed via Docker containers. This methodology guarantees deterministic execution across various Edge devices and aggressively eliminates host OS dependency conflicts when processing raw payload streams in real-time.";
+  
+  const block2Title = analyticsData?.block2Title || "> Ingestion:\nMQTT & Telegraf";
+  const block2Text = analyticsData?.block2Text || "Downlinked RF packets are decoded and immediately published to a localized Mosquitto MQTT broker. Simultaneously, high-speed Telegraf JSON parsing agents subscribe to these telemetry topics, rapidly sanitizing and formatting the chaotic raw sensor arrays before routing them into persistent storage.";
+  
+  const block3Title = analyticsData?.block3Title || "> Time-Series:\nInfluxDB";
+  const block3Text = analyticsData?.block3Text || "Structured telemetry is indexed natively into an InfluxDB time-series database. Optimized specifically for heavy write loads, it effortlessly absorbs thousands of data points per second from the satellite swarm, enabling sub-millisecond query latency for the Grafana visualization layer above.";
+
   return (
     <section className="relative w-full bg-[#111111] flex flex-col lg:flex-row border-t-2 border-[var(--gray-light)]">
       
@@ -86,33 +95,33 @@ export default function SplitScreenAnalytics() {
         {/* TEXT BLOCK 1 */}
         <div className="flex flex-col relative">
           <div className="absolute -left-12 top-2 hidden lg:block text-[var(--gray-light)] font-mono text-sm opacity-50">01</div>
-          <h3 className="font-mono text-[var(--accent-telemetry-orange)] text-xl md:text-2xl font-bold mb-6 border-b-2 border-[var(--gray-light)] pb-4 uppercase">
-            &gt; Virtualization:<br/>Docker
+          <h3 className="font-mono text-[var(--accent-telemetry-orange)] text-xl md:text-2xl font-bold mb-6 border-b-2 border-[var(--gray-light)] pb-4 uppercase whitespace-pre-line">
+            {block1Title}
           </h3>
           <p className="font-mono text-[var(--foreground)] text-sm md:text-base leading-loose">
-            The entire ground station analytics stack is fully isolated and deployed via <span className="bg-[var(--foreground)] text-[var(--background)] px-1 font-bold">Docker containers</span>. This methodology guarantees deterministic execution across various Edge devices and aggressively eliminates host OS dependency conflicts when processing raw payload streams in real-time.
+            {block1Text}
           </p>
         </div>
 
         {/* TEXT BLOCK 2 */}
         <div className="flex flex-col relative">
           <div className="absolute -left-12 top-2 hidden lg:block text-[var(--gray-light)] font-mono text-sm opacity-50">02</div>
-          <h3 className="font-mono text-[var(--accent-neon-red)] text-xl md:text-2xl font-bold mb-6 border-b-2 border-[var(--gray-light)] pb-4 uppercase">
-            &gt; Ingestion:<br/>MQTT & Telegraf
+          <h3 className="font-mono text-[var(--accent-neon-red)] text-xl md:text-2xl font-bold mb-6 border-b-2 border-[var(--gray-light)] pb-4 uppercase whitespace-pre-line">
+            {block2Title}
           </h3>
           <p className="font-mono text-[var(--foreground)] text-sm md:text-base leading-loose">
-            Downlinked RF packets are decoded and immediately published to a localized <span className="bg-[var(--foreground)] text-[var(--background)] px-1 font-bold">Mosquitto MQTT broker</span>. Simultaneously, high-speed <span className="bg-[var(--foreground)] text-[var(--background)] px-1 font-bold">Telegraf JSON parsing</span> agents subscribe to these telemetry topics, rapidly sanitizing and formatting the chaotic raw sensor arrays before routing them into persistent storage.
+            {block2Text}
           </p>
         </div>
 
         {/* TEXT BLOCK 3 */}
         <div className="flex flex-col relative">
           <div className="absolute -left-12 top-2 hidden lg:block text-[var(--gray-light)] font-mono text-sm opacity-50">03</div>
-          <h3 className="font-mono text-[var(--accent-telemetry-orange)] text-xl md:text-2xl font-bold mb-6 border-b-2 border-[var(--gray-light)] pb-4 uppercase">
-            &gt; Time-Series:<br/>InfluxDB
+          <h3 className="font-mono text-[var(--accent-telemetry-orange)] text-xl md:text-2xl font-bold mb-6 border-b-2 border-[var(--gray-light)] pb-4 uppercase whitespace-pre-line">
+            {block3Title}
           </h3>
           <p className="font-mono text-[var(--foreground)] text-sm md:text-base leading-loose">
-            Structured telemetry is indexed natively into an <span className="bg-[var(--foreground)] text-[var(--background)] px-1 font-bold">InfluxDB time-series database</span>. Optimized specifically for heavy write loads, it effortlessly absorbs thousands of data points per second from the satellite swarm, enabling sub-millisecond query latency for the Grafana visualization layer above.
+            {block3Text}
           </p>
         </div>
 

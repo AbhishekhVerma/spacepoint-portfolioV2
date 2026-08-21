@@ -24,6 +24,7 @@ export default async function Home() {
   const missionLog = portfolio?.missionLog || "Architecting resilient, decentralized mesh networks for nano-satellites. Integrating onboard Edge AI for autonomous orbital decision-making, minimizing ground-station latency, and ensuring continuous high-fidelity telemetry streaming.";
   const profileImage = portfolio?.profileImage || "/img/profile.jpg";
   const primaryColor = portfolio?.themePrimaryColor || "#ff3333";
+  const content = portfolio?.content as any || {};
 
   return (
     <main className="w-full bg-[var(--background)]">
@@ -41,8 +42,8 @@ export default async function Home() {
       <HorizontalScroll />
       <MeshNetwork />
       <ParallaxSection />
-      <SplitScreenAnalytics />
-      <GalleryGrid />
+      <SplitScreenAnalytics analyticsData={content.analytics} />
+      <GalleryGrid galleryData={content.gallery} />
     </main>
   );
 }

@@ -6,7 +6,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function GalleryGrid() {
+export default function GalleryGrid({ galleryData }: { galleryData?: any }) {
+  const img1 = galleryData?.img1 || "/img/5.png";
+  const caption1 = galleryData?.caption1 || "Musuem of the Future Workshop (FHSC)";
+  const img2 = galleryData?.img2 || "/img/6.png";
+  const caption2 = galleryData?.caption2 || "Future Heroes Summer Camp (FHSC)";
+  const img3 = galleryData?.img3 || "/img/7.png";
+  const caption3 = galleryData?.caption3 || "CUBESAT";
+  const img4 = galleryData?.img4 || "/img/8.png";
+  const caption4 = galleryData?.caption4 || "Emirates Development Bank Quick Flight Workshop Instructor";
+
   const containerRef = useRef<HTMLElement>(null);
   // Array to hold references to the individual image cards for staggering
   const imagesRef = useRef<HTMLDivElement[]>([]);
@@ -72,9 +81,9 @@ export default function GalleryGrid() {
           ref={addToRefs} 
           className="col-span-1 md:col-span-8 h-72 md:h-[500px] border-4 border-[var(--gray-light)] bg-neutral-900 relative overflow-hidden group shadow-[8px_8px_0px_0px_var(--gray-dark)]"
         >
-          <img src="/img/5.png" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" alt="Intro to Edge AI" />
+          <img src={img1} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" alt="Gallery Image 1" />
           <div className="absolute bottom-4 left-4 bg-[var(--background)] border border-[var(--gray-light)] px-3 py-1 font-mono text-[10px] md:text-xs text-[var(--foreground)] z-10">
-            &gt; IMG_01: Musuem of the Future Workshop (FHSC)
+            &gt; IMG_01: {caption1}
           </div>
         </div>
 
@@ -83,9 +92,9 @@ export default function GalleryGrid() {
           ref={addToRefs} 
           className="col-span-1 md:col-span-4 h-72 md:h-[500px] border-4 border-[var(--gray-light)] bg-neutral-900 relative overflow-hidden group shadow-[8px_8px_0px_0px_var(--gray-dark)]"
         >
-          <img src="/img/6.png" className="absolute inset-0 w-full h-full object-cover object-left group-hover:scale-110 transition-transform duration-700 ease-in-out" alt="Hardware Setup" />
+          <img src={img2} className="absolute inset-0 w-full h-full object-cover object-left group-hover:scale-110 transition-transform duration-700 ease-in-out" alt="Gallery Image 2" />
           <div className="absolute bottom-4 left-4 bg-[var(--background)] border border-[var(--gray-light)] px-3 py-1 font-mono text-[10px] md:text-xs text-[var(--foreground)] z-10">
-            &gt; IMG_02: Future Heroes Summer Camp (FHSC)
+            &gt; IMG_02: {caption2}
           </div>
         </div>
 
@@ -94,9 +103,9 @@ export default function GalleryGrid() {
           ref={addToRefs} 
           className="col-span-1 md:col-span-4 h-64 md:h-96 border-4 border-[var(--gray-light)] bg-neutral-900 relative overflow-hidden group shadow-[8px_8px_0px_0px_var(--gray-dark)]"
         >
-          <img src="/img/7.png" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" alt="Cubesat Lab" />
+          <img src={img3} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" alt="Gallery Image 3" />
           <div className="absolute bottom-4 left-4 bg-[var(--background)] border border-[var(--gray-light)] px-3 py-1 font-mono text-[10px] md:text-xs text-[var(--foreground)] z-10">
-            &gt; IMG_03: CUBESAT
+            &gt; IMG_03: {caption3}
           </div>
         </div>
 
@@ -105,9 +114,9 @@ export default function GalleryGrid() {
           ref={addToRefs} 
           className="col-span-1 md:col-span-5 h-64 md:h-96 border-4 border-[var(--gray-light)] bg-neutral-900 relative overflow-hidden group shadow-[8px_8px_0px_0px_var(--gray-dark)]"
         >
-          <img src="/img/8.png" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" alt="1-on-1 Mentoring" />
+          <img src={img4} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" alt="Gallery Image 4" />
           <div className="absolute bottom-4 left-4 bg-[var(--background)] border border-[var(--gray-light)] px-3 py-1 font-mono text-[10px] md:text-xs text-[var(--foreground)] z-10">
-            &gt; IMG_04: Emirates Development Bank Quick Flight Workshop Instructor
+            &gt; IMG_04: {caption4}
           </div>
         </div>
 

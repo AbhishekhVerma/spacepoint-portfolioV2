@@ -33,7 +33,7 @@ export async function PUT(request: Request) {
     const data = await request.json();
     
     // Only extract the fields we want to update
-    const { username, aboutText, missionLog, profileImage, themePrimaryColor } = data;
+    const { username, aboutText, missionLog, profileImage, themePrimaryColor, content } = data;
 
     const updatedPortfolio = await prisma.portfolio.upsert({
       where: { userId: session.user.id },
@@ -43,6 +43,7 @@ export async function PUT(request: Request) {
         missionLog,
         profileImage,
         themePrimaryColor,
+        content: content || {},
       },
       create: {
         userId: session.user.id,
@@ -51,6 +52,7 @@ export async function PUT(request: Request) {
         missionLog,
         profileImage,
         themePrimaryColor,
+        content: content || {},
       }
     });
 

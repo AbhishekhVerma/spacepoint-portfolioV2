@@ -82,6 +82,9 @@ model Portfolio {
   themeBackgroundColor String? // e.g., #0a0a0a
   themeForegroundColor String? // e.g., #ffffff
 
+  // Extended Content (JSON payload for dynamic sections)
+  content             Json?   @default("{}")
+
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
